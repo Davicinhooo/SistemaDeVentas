@@ -83,7 +83,6 @@ public class frmVenta extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 990, 230));
 
         btnCobrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnCobrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/ingreso.png"))); // NOI18N
         btnCobrar.setText("COBRAR");
         btnCobrar.setToolTipText("");
         btnCobrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -91,20 +90,19 @@ public class frmVenta extends javax.swing.JFrame {
         getContentPane().add(btnCobrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 560, 130, 110));
 
         btnQuitar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnQuitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/boton-x.png"))); // NOI18N
-        btnQuitar.setText("QUITAR PRODUC");
+        btnQuitar.setText("QUITAR PRODUCTO");
         btnQuitar.setToolTipText("");
+        btnQuitar.setActionCommand("QUITAR PRODUCTO");
         btnQuitar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnQuitar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(btnQuitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 160, 110));
+        getContentPane().add(btnQuitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 200, 110));
 
         btnMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/menu.png"))); // NOI18N
         btnMenu.setText("MENU");
         btnMenu.setToolTipText("");
         btnMenu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnMenu.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 70, 130, 110));
+        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 70, 100, 80));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -117,7 +115,6 @@ public class frmVenta extends javax.swing.JFrame {
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 70, 20));
 
         btnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/agregar-producto.png"))); // NOI18N
         btnAgregar.setText("AGREGAR");
         btnAgregar.setToolTipText("");
         btnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

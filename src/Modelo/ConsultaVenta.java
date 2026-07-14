@@ -1,6 +1,8 @@
 package Modelo;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JComboBox;
 
 public class ConsultaVenta extends Conexion {
@@ -103,4 +105,43 @@ public class ConsultaVenta extends Conexion {
             ps.executeUpdate();
         } catch (SQLException e) { System.err.println("Error al guardar detalle: " + e); }
     }
+    
+    public List<Venta> listarVenta(){
+        List<Venta> lista = new ArrayList<>();
+        Connection con = getConexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        String sql = "SELECT * FROM VENTA";
+        
+        try {
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Venta ven = new Venta();
+                ven.setId_venta(rs.getInt("ID_Venta"));
+                ven.setId_cliente(rs.getInt("ID_Cliente"));
+                ven.setId_usuario(rs.getInt("ID_Usuario"));
+                ven.setId_turno_caja(rs.getInt("ID_Turno_Caja"));
+                ven.setId_metodo_pago(rs.getInt("ID_Metodo_Pago"));
+                ven.setFecha_hora(rs.getDate("Fecha_Hora"));
+                ven.setTipo_venta(rs.getString("Tipo_Venta"));
+                ven.setTotal(rs.getDouble("Total"));
+                lista.add(ven);
+                    
+            }
+    } catch (Exception e) {
+            System.err.println(e);
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                System.err.println(e);
+            }
+        }
+        return lista;
+        
+    }
+
 }

@@ -4,6 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class ConsultaUsuario extends Conexion {
     
@@ -119,4 +122,40 @@ public class ConsultaUsuario extends Conexion {
             }
         }
     }
+    
+    public List<Usuario> listarUsuario(){
+        List<Usuario> lista = new ArrayList<>();
+        Connection con = getConexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        String sql = "SELECT * FROM USUARIO";
+        
+        try {
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Usuario usu = new Usuario();
+                usu.setIdUsuario(rs.getInt("ID_Usuario"));
+                usu.setUsername(rs.getString("Username"));
+                usu.setPassword(rs.getString("Password"));
+                usu.setRol(rs.getString("Rol"));
+                
+                lista.add(usu);
+                    
+            }
+    } catch (Exception e) {
+            System.err.println(e);
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                System.err.println(e);
+            }
+        }
+        return lista;
+        
+    }
+
 }

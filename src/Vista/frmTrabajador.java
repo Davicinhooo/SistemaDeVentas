@@ -53,19 +53,19 @@ public class frmTrabajador extends javax.swing.JFrame {
 
         tbTrabajador.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID_TRABAJADOR", "DNI", "NOMBRE", "TELEFONO", "CARGO", "ID_Usuario"
+                "ID_TRABAJADOR", "DNI", "NOMBRE", "TELEFONO", "CARGO", "SUELDO", "ID_Usuario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -95,20 +95,17 @@ public class frmTrabajador extends javax.swing.JFrame {
         jLabel4.setText("TELEFONO");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 80, 70, 20));
 
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/lupa.png"))); // NOI18N
         btnBuscar.setText("BUSCAR");
         btnBuscar.addActionListener(this::btnBuscarActionPerformed);
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 100, 50));
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/guardarrrrrrrr.png"))); // NOI18N
         btnGuardar.setText("GUARDAR");
-        btnGuardar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnGuardar.addActionListener(this::btnGuardarActionPerformed);
-        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 100, 50));
 
-        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/editar.png"))); // NOI18N
         btnEditar.setText("EDITAR");
-        getContentPane().add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, -1));
+        btnEditar.addActionListener(this::btnEditarActionPerformed);
+        getContentPane().add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 100, 50));
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
         txtCargo.addActionListener(this::txtCargoActionPerformed);
@@ -121,20 +118,17 @@ public class frmTrabajador extends javax.swing.JFrame {
         jLabel8.setText("SUELDO");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 70, 20));
 
-        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/menu.png"))); // NOI18N
         btnMenu.setText("MENU");
-        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 170, -1, 70));
+        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, 100, 50));
 
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/eliminar.png"))); // NOI18N
         btnEliminar.setText("ELIMINAR");
-        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 150, 70));
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 110, 50));
 
-        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/escoba.png"))); // NOI18N
         btnLimpiar.setText("LIMPIAR");
         btnLimpiar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnLimpiar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
-        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, 160, 70));
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 120, 50));
 
         cbxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", " ", "Cajero(a) ", " ", "Supervisor", " ", "Vendedor", " ", "Soporte IT", " ", "Personal de Almacén", " ", "Seguridad", " ", "Mantenimiento y Limpieza", " ", "Contabilidad" }));
         cbxUsuario.addActionListener(this::cbxUsuarioActionPerformed);
@@ -169,6 +163,10 @@ public class frmTrabajador extends javax.swing.JFrame {
     private void cbxUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxUsuarioActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     /**
      * @param args the command line arguments

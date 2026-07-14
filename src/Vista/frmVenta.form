@@ -108,9 +108,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Recursos/ingreso.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="COBRAR"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -130,11 +127,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Recursos/boton-x.png"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="QUITAR PRODUC"/>
+        <Property name="text" type="java.lang.String" value="QUITAR PRODUCTO"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="actionCommand" type="java.lang.String" value="QUITAR PRODUCTO"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
         <Property name="verticalTextPosition" type="int" value="3"/>
       </Properties>
@@ -143,7 +138,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="550" width="160" height="110"/>
+          <AbsoluteConstraints x="30" y="550" width="200" height="110"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -151,9 +146,6 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Recursos/menu.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="MENU"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -165,7 +157,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="870" y="70" width="130" height="110"/>
+          <AbsoluteConstraints x="880" y="70" width="100" height="80"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -220,9 +212,6 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Recursos/agregar-producto.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="AGREGAR"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>

@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Modelo.Usuario;
 import Vista.frmUsuario;
+import java.util.List;
 
 
 public class ControlUsuario implements ActionListener {
@@ -32,6 +33,23 @@ public class ControlUsuario implements ActionListener {
         vista.setTitle("Mantenimiento de Usuarios");
         vista.setLocationRelativeTo(null);
         //vista.txtId.setVisible(false); // Ocultamos el ID
+        llenarTabla();
+        
+    }
+    
+    public void llenarTabla(){
+        List<Usuario> listaUsu = consultas.listarUsuario();
+        DefaultTableModel modeloTabla = (DefaultTableModel) vista.tbUsuario.getModel();
+        modeloTabla.setRowCount(0);
+        Object[] fila = new Object[4];
+        
+        for(int i = 0; i < listaUsu.size(); i++){
+            fila[0] = listaUsu.get(i).getIdUsuario();
+            fila[1] = listaUsu.get(i).getUsername();
+            fila[2] = listaUsu.get(i).getPassword();
+            fila[3] = listaUsu.get(i).getRol();
+            modeloTabla.addRow(fila);
+        }
     }
 
     @Override
@@ -56,6 +74,7 @@ public class ControlUsuario implements ActionListener {
         if (consultas.Guardar(modelo)) {
             JOptionPane.showMessageDialog(null, "usuarioguardado exitosamente");
             agregarAlHistorial();
+            llenarTabla();
             Limpiar();
         } else {
             JOptionPane.showMessageDialog(null, "Error al guardar el Usuario");
@@ -75,6 +94,7 @@ public class ControlUsuario implements ActionListener {
             if(consultas.Editar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Usuario modificado exitosamente");
                 agregarAlHistorial();
+                llenarTabla();
                 Limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "Error al modificar el Usuario");
@@ -88,6 +108,7 @@ public class ControlUsuario implements ActionListener {
             if(consultas.Eliminar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Cliente Usuario exitosamente");
                 Limpiar();
+                llenarTabla();
             } else {
                 JOptionPane.showMessageDialog(null, "Error al eliminar el Usuario");
             }
@@ -105,6 +126,7 @@ public class ControlUsuario implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "No se encontró el usuario");
                 agregarAlHistorial();
+                llenarTabla();
                 Limpiar();
             }
         }

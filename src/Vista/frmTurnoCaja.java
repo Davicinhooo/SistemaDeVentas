@@ -29,7 +29,6 @@ public class frmTurnoCaja extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        btnProcesar1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         cbxCaja = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
@@ -61,10 +60,6 @@ public class frmTurnoCaja extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("TURNO DE CAJA");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, 30));
-
-        btnProcesar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cambio-de-turno.png"))); // NOI18N
-        btnProcesar1.addActionListener(this::btnProcesar1ActionPerformed);
-        getContentPane().add(btnProcesar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 90, 70));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Estado:");
@@ -146,7 +141,6 @@ public class frmTurnoCaja extends javax.swing.JFrame {
         getContentPane().add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 110, -1));
 
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/buscar.png"))); // NOI18N
         btnBuscar.setText("BUSCAR");
         btnBuscar.addActionListener(this::btnBuscarActionPerformed);
         getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 170, 70));
@@ -169,16 +163,11 @@ public class frmTurnoCaja extends javax.swing.JFrame {
         txtFechaApertura.addActionListener(this::txtFechaAperturaActionPerformed);
         getContentPane().add(txtFechaApertura, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 110, -1));
 
-        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/menu.png"))); // NOI18N
         btnMenu.setText("MENU");
-        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, -1, -1));
+        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 90, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnProcesar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProcesar1ActionPerformed
 
     private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
         // TODO add your handling code here:
@@ -250,7 +239,6 @@ public class frmTurnoCaja extends javax.swing.JFrame {
     public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnCerrarTurno;
     public javax.swing.JButton btnMenu;
-    private javax.swing.JButton btnProcesar1;
     public javax.swing.JComboBox<String> cbxCaja;
     public javax.swing.JComboBox<String> cbxCaja1;
     private javax.swing.JLabel jLabel1;

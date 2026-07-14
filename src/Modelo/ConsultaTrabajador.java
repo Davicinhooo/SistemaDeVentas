@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JComboBox;
 
 public class ConsultaTrabajador extends Conexion {
@@ -168,5 +170,43 @@ public boolean editar(Trabajador trab) {
                 System.err.println(e);
             }
         }
+    }   
+    
+    public List<Trabajador> listarTrabajador(){
+        List<Trabajador> lista = new ArrayList<>();
+        Connection con = getConexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        String sql = "SELECT * FROM TRABAJADOR";
+        
+        try {
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Trabajador tra = new Trabajador();
+                tra.setIdTrabajador(rs.getInt("ID_Trabajador"));
+                tra.setDni(rs.getString("DNI"));
+                tra.setNombre(rs.getString("Nombre"));
+                tra.setTelefono(rs.getString("Telefono"));
+                tra.setCargo(rs.getString("Cargo"));
+                tra.setSueldo(rs.getDouble("Sueldo"));
+                tra.setIdUsuario(rs.getInt("ID_Usuario"));
+                lista.add(tra);
+                    
+            }
+    } catch (Exception e) {
+            System.err.println(e);
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                System.err.println(e);
+            }
+        }
+        return lista;
+        
     }
+
 }

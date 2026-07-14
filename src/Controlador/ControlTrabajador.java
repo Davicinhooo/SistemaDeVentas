@@ -3,9 +3,9 @@ package Controlador;
 import Modelo.ConsultaTrabajador;
 import Modelo.Trabajador; 
 import Vista.frmTrabajador;
-import Vista.frmGestorVentas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -33,7 +33,25 @@ public class ControlTrabajador implements ActionListener {
         vista.setTitle("Mantenimiento de Trabajadores");
         vista.setLocationRelativeTo(null);
         // Llenamos el ComboBox de usuarios al abrir la ventana
-        consultas.cargarUsuarios(vista.cbxUsuario); 
+        consultas.cargarUsuarios(vista.cbxUsuario);
+        llenarTabla();
+    }
+    
+    public void llenarTabla(){
+        List<Trabajador> listaTra = consultas.listarTrabajador();
+        DefaultTableModel modeloTabla = (DefaultTableModel) vista.tbTrabajador.getModel();
+        modeloTabla.setRowCount(0);
+        Object[] fila = new Object[6];
+        
+        for(int i = 0; i < listaTra.size(); i++){
+            fila[0] = listaTra.get(i).getIdTrabajador();
+            fila[1] = listaTra.get(i).getDni();
+            fila[2] = listaTra.get(i).getNombre();
+            fila[3] = listaTra.get(i).getTelefono();
+            fila[4] = listaTra.get(i).getSueldo();
+            fila[5] = listaTra.get(i).getIdUsuario();
+            modeloTabla.addRow(fila);
+        }
     }
 
     @Override
@@ -59,6 +77,7 @@ public class ControlTrabajador implements ActionListener {
             if (consultas.guardar(Modelo)) {
                 JOptionPane.showMessageDialog(null, "Trabajador guardado con éxito");
                 agregarAlHistorial();
+                llenarTabla();
                 limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "Error al guardar el Trabajador");
@@ -85,6 +104,7 @@ public class ControlTrabajador implements ActionListener {
             if(consultas.editar(Modelo)) { 
                 JOptionPane.showMessageDialog(null, "Trabajador modificado exitosamente");
                 agregarAlHistorial();
+                llenarTabla();
                 limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "Error al modificar el Trabajador");
@@ -99,6 +119,7 @@ public class ControlTrabajador implements ActionListener {
             if(consultas.Eliminar(Modelo)) {
                 JOptionPane.showMessageDialog(null, "Trabajador eliminado exitosamente");
                 agregarAlHistorial();
+                llenarTabla();
                 limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "Error al eliminar el Trabajador");
@@ -120,6 +141,7 @@ public class ControlTrabajador implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "No se encontró ningún Trabajador con ese DNI");
                 agregarAlHistorial();
+                llenarTabla();
                 limpiar();
             }
         }

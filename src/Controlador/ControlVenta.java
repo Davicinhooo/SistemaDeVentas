@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.*;
 import Vista.frmVenta;
 import java.awt.event.*;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,12 +30,32 @@ public class ControlVenta implements ActionListener {
         vista.setLocationRelativeTo(null);
         vista.txtTotal.setText("0.00");
         vista.txtTotal.setEditable(false); // No queremos que el cajero escriba aquí
+        llenarTabla();
         
         consultas.cargarClientes(vista.cbxCliente);
         consultas.cargarCajeros(vista.cbxUsuario);
         consultas.cargarTurnosAbiertos(vista.cbxTurno);
         consultas.cargarMetodoPago(vista.cbxMetodoPago);
         consultas.cargarProductos(vista.cbxProducto);
+    }
+    
+    public void llenarTabla(){
+        List<Venta> listaVen = consultas.listarVenta();
+        DefaultTableModel modeloTabla = (DefaultTableModel) vista.tbVenta.getModel();
+        modeloTabla.setRowCount(0);
+        Object[] fila = new Object[8];
+        
+        for(int i = 0; i < listaVen.size(); i++){
+            fila[0] = listaVen.get(i).getId_venta();
+            fila[1] = listaVen.get(i).getId_cliente();
+            fila[2] = listaVen.get(i).getId_usuario();
+            fila[3] = listaVen.get(i).getId_turno_caja();
+            fila[4] = listaVen.get(i).getId_metodo_pago();
+            fila[5] = listaVen.get(i).getFecha_hora();
+            fila[6] = listaVen.get(i).getTipo_venta();
+            fila[7] = listaVen.get(i).getTotal();
+            modeloTabla.addRow(fila);
+        }
     }
 
     @Override
