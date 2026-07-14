@@ -1,0 +1,25 @@
+# 1. Archivos compilados de Java
+*.class
+*.jar
+*.war
+*.ear
+
+# 2. Carpetas de compilación de NetBeans (¡Las que queríamos borrar!)
+/build/
+/dist/
+
+# 3. Configuraciones locales y privadas de NetBeans
+# (Si no ignoras esto, cuando otro programador abra tu código, 
+# su IDE chocará con las rutas de tu disco duro)
+/nbproject/private/
+/nbproject/Makefile-*.mk
+/nbproject/Package-*.bash
+build.xml.data.CRC32
+
+# 4. Archivos del Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# 5. Logs y archivos temporales
+*.log
+*.tmp
