@@ -16,7 +16,7 @@ Un sistema de escritorio robusto desarrollado en Java para gestionar las operaci
 
 ## 📦 Instrucciones de Instalación
 
-Puedes descargar el programa listo para usar desde la sección de **[Releases]** (https://github.com/Codeby-Davi/SistemaDeVentas/releases/tag/v1.0.0) a la derecha de este repositorio.
+Puedes descargar el programa listo para usar desde la sección de **[Releases]** a la derecha de este repositorio.
 
 1. **Descarga el instalador:** Haz clic en el archivo `.exe` que se encuentra en los recursos (Assets).
 2. **Inicia el asistente:** Haz doble clic sobre el archivo descargado para comenzar la instalación.
