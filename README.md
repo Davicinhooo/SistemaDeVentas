@@ -1,6 +1,6 @@
 ## 🤝 Colaboradores y Créditos
 
-Este proyecto fue desarrollado en equipo para el sistema de **INNOVATEC**.
+Este proyecto fue desarrollado en equipo para el sistema de ventas.
 
 * **Desarrollador / Colaborador:** Walter Guevara ([@Codeby-Davi](https://github.com/Codeby-Davi))
 * **Desarrollador / Colaborador:** Jostin Davalos([@HellomynameisJJ](https://github.com/HellomynameisJJ))
