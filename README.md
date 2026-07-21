@@ -7,6 +7,8 @@ Este proyecto fue desarrollado en equipo para el sistema de ventas.
 * **Desarrollador / Colaborador:** Jhossep Cueto ([@Jhoss856](https://github.com/Jhoss856))
 * **Desarrollador / Colaborador:** Leyner Fonseca ([@HellomynameisJJ](https://github.com/HellomynameisJJ))
 * **Desarrollador / Colaborador:** Andrea Ramirez ([@AndreaAlbornoz12](https://github.com/AndreaAlbornoz12))
+
+---
   
 # 🛒 Sistema de Ventas MiniMarket
 
